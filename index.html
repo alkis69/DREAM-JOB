@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DREAM JOB | Оформление виз в Швейцарию, Германию, Францию</title>
+    <meta name="description" content="Профессиональное оформление рабочих виз в Швейцарию, Германию, Францию и страны Европы. Гарантия получения, срочное оформление, индивидуальный подход.">
+    <meta name="keywords" content="рабочая виза, оформление визы, виза в Швейцарию, виза в Германию, виза во Францию, шенгенская виза">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background: url('https://example.com/flags-pattern.jpg') repeat;
+            background-size: 100px 100px;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Шапка */
+        header {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .menu {
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: center;
+        }
+        
+        .menu a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .menu a:hover {
+            color: var(--primary);
+        }
+        
+        .menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .menu a:hover:after {
+            width: 100%;
+        }
+        
+        .header-buttons {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Увеличено расстояние между кнопками с 10px до 15px */
+        }
+        
+        .contact-btn, .license-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+        
+        .contact-btn:hover, .license-btn:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        
+        /* Герой-блок */
+        .hero {
+            background: linear-gradient(135deg, rgba(37, 99, 235, 0.9) 0%, rgba(29, 78, 216, 0.9) 100%), url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 120px 0;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -50px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+        }
+        
+        /* Преимущества */
+        .advantages {
+            padding: 80px 0;
+            background: transparent;
+            position: relative;
+        }
+        
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .advantage-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        }
+        
+        .advantage-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .advantage-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(37, 99, 235, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+            color: var(--primary);
+        }
+        
+        .advantage-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        
+        /* Карточки стран */
+        .countries {
+            padding: 100px 0;
+            position: relative;
+            background: transparent;
+        }
+        
+        .countries:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: transparent;
+            clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+            z-index: -1;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--secondary);
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .country-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .country-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            opacity: 1; /* Убедимся, что карточки видны */
+            transform: translateY(0); /* Убедимся, что нет смещения */
+        }
+        
+        .country-card.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .country-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .country-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .country-info {
+            padding: 25px;
+        }
+        
+        .country-info h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .country-info p {
+            color: var(--gray);
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+        
+        .country-info .price {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* Форма */
+        .application {
+            padding: 100px 0;
+            position: relative;
+            background: transparent;
+        }
+        
+        .application:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: transparent;
+            clip-path: polygon(0 0, 100% 50%, 100% 100%, 0 100%);
+        }
+        
+        .application-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .application-form input, 
+        .application-form select,
+        .application-form textarea {
+            width: 100%;
+            padding: 15px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .application-form input:focus, 
+        .application-form select:focus,
+        .application-form textarea:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .radio-btn {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .radio-btn:hover {
+            border-color: var(--primary);
+        }
+        
+        .radio-btn input {
+            margin-right: 8px;
+        }
+        
+        select[multiple] {
+            height: auto;
+            min-height: 120px;
+            padding: 10px;
+        }
+        
+        .submit-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .submit-btn i {
+            margin-right: 10px;
+        }
+        
+        .submit-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Подвал */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+        
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        
+        .socials {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .socials a:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        
+        /* Новая секция "О компании" */
+        .about {
+            padding: 80px 0;
+            background: transparent;
+            text-align: center;
+        }
+        
+        .about h2 {
+            font-size: 36px;
+            color: var(--dark);
+            margin-bottom: 30px;
+        }
+        
+        .about p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: var(--gray);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .menu {
+                flex-direction: column;
+                margin: 10px 0;
+            }
+            
+            .menu a {
+                margin: 5px 0;
+            }
+            
+            .header-buttons {
+                flex-direction: row;
+                justify-content: center;
+                gap: 10px; /* Меньше расстояние на мобильных устройствах */
+                width: 100%;
+            }
+            
+            .hero {
+                padding: 80px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+
+        /* Новый стиль для кнопки в карточках (оранжевая, как на скрине) */
+        .country-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--secondary);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .country-btn:hover {
+            background: #e76f51;
+        }
+
+        .country-info .btn-small {
+            display: block;
+            background: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 15px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .country-info .btn-small:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-passport"></i>
+                DREAM JOB
+            </div>
+            <nav class="menu">
+                <a href="#hero">Главная</a>
+                <a href="tours.html">Туры</a>
+                <a href="#advantages">Услуги</a>
+                <a href="#countries">Страны</a>
+                <a href="#about">О компании</a>
+                <a href="#form">Контакты</a>
+            </nav>
+            <div class="header-buttons">
+                <a href="#form" class="contact-btn">Заказать звонок</a>
+                <a href="license.html" class="license-btn">Лицензия</a>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Герой-блок -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <h1>DREAM JOB | Оформление рабочих виз в Швейцарию, Германию, Францию</h1>
+            <p>Профессиональная помощь в получении рабочих виз любой сложности. Гарантия результата, минимальные сроки оформления.</p>
+            <a href="#form" class="btn">Оставить заявку</a>
+        </div>
+    </section>
+    
+    <!-- Преимущества -->
+    <section class="advantages" id="advantages">
+        <div class="container">
+            <div class="section-title">
+                <h2>Почему выбирают нас</h2>
+                <p> причин доверить нам оформление вашей визы</p>
+            </div>
+            
+            <div class="advantages-grid">
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Гарантия получения</h3>
+                    <p>98% успешных случаев оформления виз с первого обращения</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Срочное оформление</h3>
+                    <p>Возможность получения визы за 1-3 рабочих дня</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Персональный менеджер</h3>
+                    <p>Профессиональное сопровождение на всех этапах</p>
+                </div>
+                
+                <div class="advantage-card">
+                    <div class="advantage-icon">
+                        <i class="fas fa-euro-sign"></i>
+                    </div>
+                    <h3>Фиксированная цена</h3>
+                    <p>Максимально прозрачная оплата с гарантированным подтверждением на каждом этапе оформления</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Карточки стран -->
+    <section class="countries" id="countries">
+        <div class="container">
+            <div class="section-title">
+                <h2>Наши направления</h2>
+                <p>Мы помогаем оформить визы в следующие страны</p>
+            </div>
+            <div class="country-grid">
+                <!-- Швейцария -->
+                <div class="country-card">
+                    <a href="vacancies_switzerland.html" class="country-btn">Получить</a>
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Швейцария">
+                    <div class="country-info">
+                        <h3>Швейцария</h3>
+                        <p class="price">1200 €</p>
+                    </div>
+                </div>
+                
+                <!-- Германия -->
+                <div class="country-card">
+                    <a href="vacancies_germany.html" class="country-btn">Получить</a>
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Германия">
+                    <div class="country-info">
+                        <h3>Германия</h3>
+                        <p class="price">930 €</p>
+                    </div>
+                </div>
+                
+                <!-- Франция -->
+                <div class="country-card">
+                    <a href="vacancies_france.html" class="country-btn">Получить</a>
+                    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80" alt="Франция">
+                    <div class="country-info">
+                        <h3>Франция</h3>
+                        <p class="price">930 €</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Форма заявки -->
+    <section class="application" id="form">
+        <div class="container">
+            <div class="section-title">
+                <h2>Оставить заявку</h2>
+                <p>Заполните форму и наш специалист свяжется с вами в течение 15 минут</p>
+            </div>
+            <form class="application-form" id="visaForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Полное имя</label>
+                        <input type="text" id="name" placeholder="Иван Иванов" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон</label>
+                        <input type="tel" id="phone" placeholder="+7 (999) 123-45-67" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Тип визы</label>
+                    <div class="radio-group">
+                        <label class="radio-btn">
+                            <input type="radio" name="visaType" value="tourist" checked>
+                            <span>Туристическая</span>
+                        </label>
+                        <label class="radio-btn">
+                            <input type="radio" name="visaType" value="business">
+                            <span>Деловая</span>
+                        </label>
+                        <label class="radio-btn">
+                            <input type="radio" name="visaType" value="student">
+                            <span>Студенческая</span>
+                        </label>
+                        <label class="radio-btn">
+                            <input type="radio" name="visaType" value="work">
+                            <span>Рабочая</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Страна назначения</label>
+                    <select id="country" required>
+                        <option value="" disabled selected>Выберите страну</option>
+                        <option>Швейцария</option>
+                        <option>Германия</option>
+                        <option>Франция</option>
+                        <option>Испания</option>
+                        <option>Италия</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="documents">Необходимые документы</label>
+                    <select id="documents" multiple>
+                        <option value="passport">Загранпаспорт</option>
+                        <option value="photo">Фото</option>
+                        <option value="tickets">Билеты</option>
+                        <option value="hotel">Бронь отеля</option>
+                    </select>
+                    <input type="file" id="photoUpload" accept="image/*" style="margin-top: 10px; width: 100%; padding: 10px; border: 1px solid #e2e8f0; border-radius: 8px;">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Дополнительная информация</label>
+                    <textarea id="message" rows="3" placeholder="Тип визы, сроки и т.д."></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Отправить заявку
+                </button>
+            </form>
+        </div>
+    </section>
+    
+    <!-- Секция "О компании" -->
+    <section class="about" id="about">
+        <div class="container">
+            <h2>О компании</h2>
+            <p>DREAM JOB — это проверенный сервис по оформлению виз, работающий с 2019 года. Мы специализируемся на предоставлении профессиональной помощи в получении виз в Швейцарию, Германию, Францию и другие страны Европы. Наша команда состоит из опытных специалистов, которые знают все тонкости визового процесса и помогут вам избежать ошибок. Мы ценим каждого клиента и гарантируем индивидуальный подход, срочное оформление и полную конфиденциальность ваших данных.</p>
+        </div>
+    </section>
+    
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <p>DREAM JOB - профессиональный сервис по оформлению виз с 2019 года. Мы помогаем нашим клиентам получить визы без лишних хлопот.</p>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Bundlaan 2, 1031 KC Amsterdam, Нидерланды</p>
+                        <p><i class="fas fa-phone"></i> +31 619 101 248</p>
+                        <p><i class="fas fa-envelope"></i> dream.job.cap@gmail.com</p>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="#hero">Главная</a></li>
+                        <li><a href="tours.html">Туры</a></li>
+                        <li><a href="#advantages">Услуги</a></li>
+                        <li><a href="#countries">Стоимость</a></li>
+                        <li><a href="#about">Документы</a></li>
+                        <li><a href="#form">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2023 DREAM JOB. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Микроразметка для SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "DREAM JOB",
+      "description": "Оформление рабочих виз любой сложности",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Bundlaan 2",
+        "addressLocality": "Amsterdam",
+        "postalCode": "1031 KC",
+        "addressCountry": "Нидерланды"
+      },
+      "telephone": "+31619101248",
+      "email": "dream.job.cap@gmail.com",
+      "openingHours": "Mo-Fr 09:00-18:00"
+    }
+    </script>
+
+    <!-- Скрипты -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Плавная прокрутка для меню и футера
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Анимация карточек при появлении
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.country-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Обработка формы с отправкой в Telegram
+        document.getElementById('visaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const visaType = document.querySelector('input[name="visaType"]:checked').value;
+            const country = document.getElementById('country').value;
+            const documents = Array.from(document.getElementById('documents').selectedOptions)
+                .map(option => option.value)
+                .join(', ');
+            const message = document.getElementById('message').value;
+            const photoInput = document.getElementById('photoUpload');
+            let photoFile = null;
+
+            if (photoInput.files && photoInput.files[0]) {
+                const file = photoInput.files[0];
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('Ошибка: Размер файла превышает 10 МБ. Выберите изображение меньшего размера.');
+                    return;
+                }
+                photoFile = file;
+            }
+
+            sendToTelegram(name, phone, visaType, country, documents, message, photoFile);
+
+            function sendToTelegram(name, phone, visaType, country, documents, message, photoFile) {
+                const botToken = '8334987367:AAGntx21W3CGcSWm1JURNMcW5PImUuSPlxk';
+                const chatId = '8352162448';
+                const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+
+                let text = `Новая заявка:\n` +
+                           `Имя: ${name}\n` +
+                           `Телефон: ${phone}\n` +
+                           `Тип визы: ${visaType}\n` +
+                           `Страна: ${country}\n` +
+                           `Документы: ${documents}\n` +
+                           `Доп. информация: ${message}`;
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        chat_id: chatId,
+                        text: text
+                    })
+                })
+                .then(response => {
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    return response.json();
+                })
+                .then(data => {
+                    if (data.ok) {
+                        if (photoFile) {
+                            const photoUrl = `https://api.telegram.org/bot${botToken}/sendPhoto`;
+                            const formData = new FormData();
+                            formData.append('chat_id', chatId);
+                            formData.append('photo', photoFile);
+                            formData.append('caption', `Фото от ${name}`);
+
+                            fetch(photoUrl, {
+                                method: 'POST',
+                                body: formData
+                            })
+                            .then(photoResponse => {
+                                if (!photoResponse.ok) throw new Error(`Photo error! status: ${photoResponse.status}`);
+                                alert('Заявка успешно отправлена!');
+                                document.getElementById('visaForm').reset();
+                            })
+                            .catch(error => console.error('Ошибка при отправке фото:', error));
+                        } else {
+                            alert('Заявка успешно отправлена!');
+                            document.getElementById('visaForm').reset();
+                        }
+                    }
+                })
+                .catch(error => console.error('Ошибка при отправке заявки:', error));
+            }
+        });
+    });
+    </script>
+</body>
+</html>

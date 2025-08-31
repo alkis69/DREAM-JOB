@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вакансии в Швейцарии | DREAM JOB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background: url('https://example.com/flags-pattern.jpg') repeat;
+            background-size: 100px 100px;
+            color: var(--dark);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: var(--dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .back-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .back-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .vacancy {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: #f9fafb;
+        }
+        
+        .vacancy .vacancy-photo {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 15px;
+        }
+        
+        .vacancy h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .vacancy p {
+            margin-bottom: 10px;
+            color: #000000; /* Изменён цвет текста на чёрный */
+        }
+        
+        .apply-btn {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .apply-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .vacancy h2 {
+                font-size: 20px;
+            }
+            .vacancy-photo {
+                max-height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Вакансии в Швейцарии</h1>
+        <a href="index.html" class="back-btn">Вернуться на главную</a>
+        
+        <div class="vacancy">
+            <img src="https://i.pinimg.com/736x/ec/ec/7e/ecec7e4c459518e39d397a3c51316913.jpg" alt="McDonald's building" class="vacancy-photo">
+            <h2>Работа в McDonald's</h2>
+            <p>Зарплата: от 2200 до 2800 CHF в месяц.</p>
+            <p>Описание: Работа в McDonald's в Швейцарии предлагает стабильную занятость с возможностью карьерного роста. Требуются сотрудники на позиции кассиров, поваров и уборщиков. Опыт работы не обязателен, предоставляется обучение на месте. График: 40 часов в неделю, возможны ночные смены.</p>
+            <p>Требования: Готовность к физической работе, возраст от 18 лет.</p>
+            <a href="index.html#form" class="apply-btn">Оставить заявку</a>
+        </div>
+        
+        <div class="vacancy">
+            <img src="https://ak.picdn.net/shutterstock/videos/1110919143/thumb/1.jpg" alt="Nestlé building" class="vacancy-photo">
+            <h2>Работа на фабрике Nestlé</h2>
+            <p>Зарплата: от 3000 до 3500 CHF в месяц.</p>
+            <p>Описание: Nestlé предлагает вакансии на производственных линиях в Швейцарии. Работа включает упаковку продуктов, контроль качества и участие в производственных процессах. Опыт работы с оборудованием будет преимуществом, но не обязателен. График: 38-40 часов в неделю.</p>
+            <p>Требования: Внимательность, готовность к обучению.</p>
+            <a href="index.html#form" class="apply-btn">Оставить заявку</a>
+        </div>
+    </div>
+</body>
+</html>

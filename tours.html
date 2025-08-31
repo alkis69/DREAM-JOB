@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DREAM JOB | Калькулятор туров</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        body {
+            background: url('https://example.com/flags-pattern.jpg') repeat;
+            background-size: 100px 100px;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 15px;
+        }
+        /* Шапка */
+        header {
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+        .logo i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        .menu a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+        .menu a:hover {
+            color: var(--primary);
+        }
+        .menu a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        .menu a:hover:after {
+            width: 100%;
+        }
+        .contact-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+        .contact-btn:hover {
+            background: transparent;
+            color: var(--primary);
+        }
+        /* Калькулятор */
+        .tour-calculator {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .tour-calculator h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--dark);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        .form-group input[type="number"] {
+            width: 100px;
+        }
+        .calculate-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .calculate-btn:hover {
+            background: var(--primary-dark);
+        }
+        #result {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            color: var(--primary);
+        }
+        /* Подвал */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+            clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+            margin-top: 50px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+        }
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+        .contact-info {
+            margin-bottom: 20px;
+        }
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--secondary);
+        }
+        .socials {
+            display: flex;
+            gap: 15px;
+        }
+        .socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .socials a:hover {
+            background: var(--secondary);
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            opacity: 0.7;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            .menu {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            .tour-calculator {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <i class="fas fa-passport"></i>
+                DREAM JOB
+            </div>
+            <nav class="menu">
+                <a href="index.html#hero">Главная</a>
+                <a href="tours.html">Туры</a>
+                <a href="index.html#advantages">Услуги</a>
+                <a href="index.html#countries">Страны</a>
+                <a href="index.html#about">О компании</a>
+                <a href="index.html#form">Контакты</a>
+            </nav>
+            <a href="index.html#form" class="contact-btn">Заказать звонок</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tour-calculator">
+            <h2>Калькулятор стоимости тура</h2>
+            <form id="tourForm">
+                <div class="form-group">
+                    <label for="country">Страна:</label>
+                    <input type="text" id="country" list="countries" required placeholder="Введите или выберите страну">
+                    <datalist id="countries">
+                        <option value="Афганистан">
+                        <option value="Албания">
+                        <option value="Алжир">
+                        <option value="Андорра">
+                        <option value="Ангола">
+                        <option value="Антигуа и Барбуда">
+                        <option value="Аргентина">
+                        <option value="Армения">
+                        <option value="Австралия">
+                        <option value="Австрия">
+                        <option value="Азербайджан">
+                        <option value="Багамские Острова">
+                        <option value="Бахрейн">
+                        <option value="Бангладеш">
+                        <option value="Барбадос">
+                        <option value="Беларусь">
+                        <option value="Бельгия">
+                        <option value="Белиз">
+                        <option value="Бенин">
+                        <option value="Бутан">
+                        <option value="Боливия">
+                        <option value="Босния и Герцеговина">
+                        <option value="Ботсвана">
+                        <option value="Бразилия">
+                        <option value="Бруней">
+                        <option value="Болгария">
+                        <option value="Буркина-Фасо">
+                        <option value="Бурунди">
+                        <option value="Кабо-Верде">
+                        <option value="Камбоджа">
+                        <option value="Камерун">
+                        <option value="Канада">
+                        <option value="Центральноафриканская Республика">
+                        <option value="Чад">
+                        <option value="Чили">
+                        <option value="Китай">
+                        <option value="Колумбия">
+                        <option value="Коморы">
+                        <option value="Конго">
+                        <option value="Коста-Рика">
+                        <option value="Хорватия">
+                        <option value="Куба">
+                        <option value="Кипр">
+                        <option value="Чехия">
+                        <option value="Дания">
+                        <option value="Джибути">
+                        <option value="Доминика">
+                        <option value="Доминиканская Республика">
+                        <option value="Эквадор">
+                        <option value="Египет">
+                        <option value="Сальвадор">
+                        <option value="Экваториальная Гвинея">
+                        <option value="Эритрея">
+                        <option value="Эстония">
+                        <option value="Эсватини">
+                        <option value="Эфиопия">
+                        <option value="Фиджи">
+                        <option value="Финляндия">
+                        <option value="Франция">
+                        <option value="Габон">
+                        <option value="Гамбия">
+                        <option value="Грузия">
+                        <option value="Германия">
+                        <option value="Гана">
+                        <option value="Греция">
+                        <option value="Гренада">
+                        <option value="Гватемала">
+                        <option value="Гвинея">
+                        <option value="Гвинея-Биссау">
+                        <option value="Гайана">
+                        <option value="Гаити">
+                        <option value="Гондурас">
+                        <option value="Венгрия">
+                        <option value="Исландия">
+                        <option value="Индия">
+                        <option value="Индонезия">
+                        <option value="Иран">
+                        <option value="Ирак">
+                        <option value="Ирландия">
+                        <option value="Израиль">
+                        <option value="Италия">
+                        <option value="Ямайка">
+                        <option value="Япония">
+                        <option value="Иордания">
+                        <option value="Казахстан">
+                        <option value="Кения">
+                        <option value="Кирибати">
+                        <option value="Кувейт">
+                        <option value="Кыргызстан">
+                        <option value="Лаос">
+                        <option value="Латвия">
+                        <option value="Ливан">
+                        <option value="Лесото">
+                        <option value="Либерия">
+                        <option value="Ливия">
+                        <option value="Лихтенштейн">
+                        <option value="Литва">
+                        <option value="Люксембург">
+                        <option value="Мадагаскар">
+                        <option value="Малави">
+                        <option value="Малайзия">
+                        <option value="Мальдивы">
+                        <option value="Мали">
+                        <option value="Мальта">
+                        <option value="Маршалловы Острова">
+                        <option value="Мавритания">
+                        <option value="Маврикий">
+                        <option value="Мексика">
+                        <option value="Микронезия">
+                        <option value="Молдова">
+                        <option value="Монако">
+                        <option value="Монголия">
+                        <option value="Черногория">
+                        <option value="Марокко">
+                        <option value="Мозамбик">
+                        <option value="Мьянма">
+                        <option value="Намибия">
+                        <option value="Науру">
+                        <option value="Непал">
+                        <option value="Нидерланды">
+                        <option value="Новая Зеландия">
+                        <option value="Никарагуа">
+                        <option value="Нигер">
+                        <option value="Нигерия">
+                        <option value="Северная Корея">
+                        <option value="Северная Македония">
+                        <option value="Норвегия">
+                        <option value="Оман">
+                        <option value="Пакистан">
+                        <option value="Палау">
+                        <option value="Панама">
+                        <option value="Папуа-Новая Гвинея">
+                        <option value="Парагвай">
+                        <option value="Перу">
+                        <option value="Филиппины">
+                        <option value="Польша">
+                        <option value="Португалия">
+                        <option value="Катар">
+                        <option value="Румыния">
+                        <option value="Россия">
+                        <option value="Руанда">
+                        <option value="Сент-Китс и Невис">
+                        <option value="Сент-Люсия">
+                        <option value="Сент-Винсент и Гренадины">
+                        <option value="Самоа">
+                        <option value="Сан-Марино">
+                        <option value="Сан-Томе и Принсипи">
+                        <option value="Саудовская Аравия">
+                        <option value="Сенегал">
+                        <option value="Сербия">
+                        <option value="Сейшелы">
+                        <option value="Сьерра-Леоне">
+                        <option value="Сингапур">
+                        <option value="Словакия">
+                        <option value="Словения">
+                        <option value="Соломоновы Острова">
+                        <option value="Сомали">
+                        <option value="Южная Африка">
+                        <option value="Южная Корея">
+                        <option value="Южный Судан">
+                        <option value="Испания">
+                        <option value="Шри-Ланка">
+                        <option value="Судан">
+                        <option value="Суринам">
+                        <option value="Швеция">
+                        <option value="Швейцария">
+                        <option value="Сирия">
+                        <option value="Тайвань">
+                        <option value="Таджикистан">
+                        <option value="Танзания">
+                        <option value="Таиланд">
+                        <option value="Восточный Тимор">
+                        <option value="Того">
+                        <option value="Тонга">
+                        <option value="Тринидад и Тобаго">
+                        <option value="Тунис">
+                        <option value="Турция">
+                        <option value="Туркменистан">
+                        <option value="Тувалу">
+                        <option value="Уганда">
+                        <option value="Украина">
+                        <option value="Объединённые Арабские Эмираты">
+                        <option value="Великобритания">
+                        <option value="США">
+                        <option value="Уругвай">
+                        <option value="Узбекистан">
+                        <option value="Вануату">
+                        <option value="Ватикан">
+                        <option value="Венесуэла">
+                        <option value="Вьетнам">
+                        <option value="Йемен">
+                        <option value="Замбия">
+                        <option value="Зимбабве">
+                    </datalist>
+                </div>
+                <div class="form-group">
+                    <label for="city">Город:</label>
+                    <input type="text" id="city" list="cities" required placeholder="Введите или выберите город">
+                    <datalist id="cities">
+                        <option value="Абиджан">
+                        <option value="Абу-Даби">
+                        <option value="Аккра">
+                        <option value="Аддис-Абеба">
+                        <option value="Алжир">
+                        <option value="Амман">
+                        <option value="Амстердам">
+                        <option value="Анкара">
+                        <option value="Афины">
+                        <option value="Багдад">
+                        <option value="Баку">
+                        <option value="Бангкок">
+                        <option value="Пекин">
+                        <option value="Бейрут">
+                        <option value="Белград">
+                        <option value="Берлин">
+                        <option value="Берн">
+                        <option value="Богота">
+                        <option value="Бразилиа">
+                        <option value="Братислава">
+                        <option value="Брюссель">
+                        <option value="Бухарест">
+                        <option value="Будапешт">
+                        <option value="Буэнос-Айрес">
+                        <option value="Каир">
+                        <option value="Канберра">
+                        <option value="Каракас">
+                        <option value="Ченнаи">
+                        <option value="Чикаго">
+                        <option value="Копенгаген">
+                        <option value="Дакар">
+                        <option value="Дамаск">
+                        <option value="Дели">
+                        <option value="Дакка">
+                        <option value="Доха">
+                        <option value="Дубай">
+                        <option value="Дублин">
+                        <option value="Женева">
+                        <option value="Ханой">
+                        <option value="Хараре">
+                        <option value="Гавана">
+                        <option value="Хельсинки">
+                        <option value="Хиросима">
+                        <option value="Гонконг">
+                        <option value="Стамбул">
+                        <option value="Джакарта">
+                        <option value="Иерусалим">
+                        <option value="Йоханнесбург">
+                        <option value="Кабул">
+                        <option value="Кампала">
+                        <option value="Катманду">
+                        <option value="Хартум">
+                        <option value="Киев">
+                        <option value="Кингстон">
+                        <option value="Киншаса">
+                        <option value="Куала-Лумпур">
+                        <option value="Эль-Кувейт">
+                        <option value="Киото">
+                        <option value="Лагос">
+                        <option value="Лима">
+                        <option value="Лиссабон">
+                        <option value="Любляна">
+                        <option value="Лондон">
+                        <option value="Лос-Анджелес">
+                        <option value="Луанда">
+                        <option value="Люксембург">
+                        <option value="Мадрид">
+                        <option value="Манила">
+                        <option value="Мапуту">
+                        <option value="Мехико">
+                        <option value="Майами">
+                        <option value="Минск">
+                        <option value="Монако">
+                        <option value="Монровия">
+                        <option value="Монреаль">
+                        <option value="Москва">
+                        <option value="Мумбаи">
+                        <option value="Мюнхен">
+                        <option value="Найроби">
+                        <option value="Нью-Дели">
+                        <option value="Нью-Йорк">
+                        <option value="Осака">
+                        <option value="Осло">
+                        <option value="Оттава">
+                        <option value="Париж">
+                        <option value="Перт">
+                        <option value="Филадельфия">
+                        <option value="Пномпень">
+                        <option value="Прага">
+                        <option value="Кито">
+                        <option value="Рабат">
+                        <option value="Рейкьявик">
+                        <option value="Рио-де-Жанейро">
+                        <option value="Рим">
+                        <option value="Сантьяго">
+                        <option value="Сан-Паулу">
+                        <option value="Сеул">
+                        <option value="Сингапур">
+                        <option value="София">
+                        <option value="Стокгольм">
+                        <option value="Сидней">
+                        <option value="Тайбэй">
+                        <option value="Таллинн">
+                        <option value="Тбилиси">
+                        <option value="Тегеран">
+                        <option value="Токио">
+                        <option value="Торонто">
+                        <option value="Тунис">
+                        <option value="Валлетта">
+                        <option value="Ванкувер">
+                        <option value="Вена">
+                        <option value="Вильнюс">
+                        <option value="Варшава">
+                        <option value="Вашингтон">
+                        <option value="Веллингтон">
+                        <option value="Янгон">
+                        <option value="Загреб">
+                        <option value="Цюрих">
+                    </datalist>
+                </div>
+                <div class="form-group">
+                    <label for="hotel">Отель:</label>
+                    <select id="hotel" required>
+                        <option value="" disabled selected>Выберите отель</option>
+                        <option value="1-star">1-star (80%)</option>
+                        <option value="2-star">2-star (100%)</option>
+                        <option value="3-star">3-star (120%)</option>
+                        <option value="4-star">4-star (150%)</option>
+                        <option value="5-star">5-star (200%)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="days">Количество дней:</label>
+                    <input type="number" id="days" min="1" required>
+                </div>
+                <button type="submit" class="calculate-btn">Рассчитать стоимость</button>
+                <div id="result"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>О компании</h3>
+                    <p>DREAM JOB - профессиональный сервис по оформлению виз с 2019 года. Мы помогаем нашим клиентам получить визы без лишних хлопот.</p>
+                    <div class="socials">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Контакты</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Bundlaan 2, 1031 KC Amsterdam, Нидерланды</p>
+                        <p><i class="fas fa-phone"></i> +31 619 101 248</p>
+                        <p><i class="fas fa-envelope"></i> dream.job.cap@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Быстрые ссылки</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html#hero">Главная</a></li>
+                        <li><a href="tours.html">Туры</a></li>
+                        <li><a href="index.html#advantages">Услуги</a></li>
+                        <li><a href="index.html#countries">Стоимость</a></li>
+                        <li><a href="index.html#about">Документы</a></li>
+                        <li><a href="index.html#form">Контакты</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 DREAM JOB. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const tourForm = document.getElementById('tourForm');
+        const resultDiv = document.getElementById('result');
+        const countryInput = document.getElementById('country');
+        const cityInput = document.getElementById('city');
+        const hotelSelect = document.getElementById('hotel');
+        const daysInput = document.getElementById('days');
+
+        // Базовые цены по странам (в евро за день, примерные значения)
+        const baseCountryPrices = {
+            afghanistan: 50, albania: 70, algeria: 60, andorra: 120, angola: 80,
+            "antigua and barbuda": 150, argentina: 90, armenia: 70, australia: 200,
+            austria: 150, azerbaijan: 80, bahamas: 180, bahrain: 130, bangladesh: 50,
+            barbados: 160, belarus: 70, belgium: 140, belize: 100, benin: 60,
+            bhutan: 90, bolivia: 70, "bosnia and herzegovina": 80, botswana: 90,
+            brazil: 100, brunei: 120, bulgaria: 80, "burkina faso": 50, burundi: 40,
+            "cabo verde": 90, cambodia: 70, cameroon: 60, canada: 200, "central african republic": 50,
+            chad: 50, chile: 110, china: 120, colombia: 90, comoros: 70,
+            congo: 60, "costa rica": 130, croatia: 120, cuba: 110, cyprus: 140,
+            czechia: 130, denmark: 160, djibouti: 80, dominica: 140, "dominican republic": 120,
+            ecuador: 90, egypt: 70, "el salvador": 80, "equatorial guinea": 70, eritrea: 50,
+            estonia: 120, eswatini: 80, ethiopia: 60, fiji: 150, finland: 160,
+            france: 130, gabon: 90, gambia: 70, georgia: 80, germany: 120,
+            ghana: 60, greece: 130, grenada: 140, guatemala: 90, guinea: 50,
+            "guinea-bissau": 50, guyana: 80, haiti: 70, honduras: 80, hungary: 110,
+            iceland: 180, india: 70, indonesia: 80, iran: 60, iraq: 50,
+            ireland: 150, israel: 140, italy: 140, jamaica: 130, japan: 200,
+            jordan: 90, kazakhstan: 80, kenya: 70, kiribati: 120, kuwait: 130,
+            kyrgyzstan: 70, laos: 80, latvia: 110, lebanon: 90, lesotho: 70,
+            liberia: 50, libya: 60, liechtenstein: 160, lithuania: 110, luxembourg: 150,
+            madagascar: 70, malawi: 50, malaysia: 100, maldives: 180, mali: 50,
+            malta: 140, "marshall islands": 150, mauritania: 60, mauritius: 150, mexico: 110,
+            micronesia: 130, moldova: 70, monaco: 200, mongolia: 80, montenegro: 100,
+            morocco: 90, mozambique: 60, myanmar: 70, namibia: 100, nauru: 140,
+            nepal: 70, netherlands: 150, "new zealand": 200, nicaragua: 80, niger: 50,
+            nigeria: 60, "north korea": 60, "north macedonia": 90, norway: 180, oman: 130,
+            pakistan: 50, palau: 150, panama: 110, "papua new guinea": 100, paraguay: 80,
+            peru: 90, philippines: 80, poland: 110, portugal: 130, qatar: 150,
+            romania: 90, russia: 100, rwanda: 60, "saint kitts and nevis": 160, "saint lucia": 150,
+            "saint vincent and the grenadines": 140, samoa: 130, "san marino": 160, "sao tome and principe": 90,
+            "saudi arabia": 140, senegal: 70, serbia: 90, seychelles: 180, "sierra leone": 50,
+            singapore: 200, slovakia: 120, slovenia: 130, "solomon islands": 120, somalia: 50,
+            "south africa": 110, "south korea": 180, "south sudan": 60, spain: 140, "sri lanka": 80,
+            sudan: 50, suriname: 90, sweden: 160, switzerland: 150, syria: 60,
+            taiwan: 150, tajikistan: 70, tanzania: 70, thailand: 90, "timor-leste": 80,
+            togo: 60, tonga: 130, "trinidad and tobago": 120, tunisia: 80, turkey: 110,
+            turkmenistan: 80, tuvalu: 140, uganda: 60, ukraine: 80, "united arab emirates": 160,
+            "united kingdom": 160, "united states": 200, uruguay: 100, uzbekistan: 70, vanuatu: 130,
+            "vatican city": 200, venezuela: 80, vietnam: 80, yemen: 50, zambia: 70, zimbabwe: 60
+        };
+
+        // Цены за тип отеля (множитель к базовой цене)
+        const hotelPrices = {
+            '1-star': 0.8,
+            '2-star': 1.0,
+            '3-star': 1.2,
+            '4-star': 1.5,
+            '5-star': 2.0
+        };
+
+        // Обработчик формы
+        tourForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            let country = countryInput.value.trim().toLowerCase();
+            let city = cityInput.value.trim();
+            const days = parseInt(daysInput.value);
+            const hotel = hotelSelect.value;
+
+            if (!country || !city || !days || !hotel) {
+                resultDiv.textContent = 'Пожалуйста, заполните все поля.';
+                return;
+            }
+
+            if (!(country in baseCountryPrices)) {
+                resultDiv.textContent = 'Цена для этой страны не определена. Используйте список или добавьте цену вручную.';
+                return;
+            }
+
+            const basePrice = baseCountryPrices[country] * days;
+            const totalPrice = basePrice * hotelPrices[hotel];
+            resultDiv.textContent = `Общая стоимость для ${city}, ${country}: ${totalPrice.toFixed(2)} €`;
+        });
+    </script>
+</body>
+</html>

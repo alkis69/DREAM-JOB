@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вакансии в Германии | DREAM JOB</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background: url('https://example.com/flags-pattern.jpg') repeat;
+            background-size: 100px 100px;
+            color: var(--dark);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        
+        .container {
+            max-width: 900px;
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+        
+        h1 {
+            font-size: 32px;
+            color: var(--dark);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .back-btn {
+            background: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .back-btn:hover {
+            background: var(--primary-dark);
+        }
+        
+        .vacancy {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: #f9fafb;
+        }
+        
+        .vacancy .vacancy-photo {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 15px;
+        }
+        
+        .vacancy h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .vacancy p {
+            margin-bottom: 10px;
+            color: #000000; /* Чёрный цвет текста для читаемости */
+        }
+        
+        .apply-btn {
+            background: var(--secondary);
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .apply-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 24px;
+            }
+            .vacancy h2 {
+                font-size: 20px;
+            }
+            .vacancy-photo {
+                max-height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Вакансии в Германии</h1>
+        <a href="index.html" class="back-btn">Вернуться на главную</a>
+        
+        <div class="vacancy">
+            <img src="https://avatars.mds.yandex.net/i?id=734a908f97bea3f0887854b537a8999f_l-4097771-images-thumbs&n=13" alt="DHL building" class="vacancy-photo">
+            <h2>Работа в DHL</h2>
+            <p>Зарплата: от 2000 до 2500 EUR в месяц.</p>
+            <p>Описание: DHL предлагает вакансии в сфере логистики и доставки в Германии. Требуются сотрудники на позиции курьеров, складских работников и диспетчеров. Опыт работы не обязателен, предоставляется обучение. График: 38-40 часов в неделю.</p>
+            <p>Требования: Водительские права категории B (для курьеров), ответственность.</p>
+            <a href="index.html#form" class="apply-btn">Оставить заявку</a>
+        </div>
+        
+        <div class="vacancy">
+            <img src="https://avatars.mds.yandex.net/i?id=a64d24e98dcb37b23a27f03bdd32bfd0_l-4232421-images-thumbs&n=13" alt="Bosch building" class="vacancy-photo">
+            <h2>Работа в Bosch</h2>
+            <p>Зарплата: от 2800 до 3500 EUR в месяц.</p>
+            <p>Описание: Bosch предлагает вакансии на производственных линиях и в инженерных отделах в Германии. Работа включает сборку оборудования, тестирование и контроль качества. Опыт работы с техникой приветствуется. График: 40 часов в неделю.</p>
+            <p>Требования: Техническое образование или опыт, внимательность.</p>
+            <a href="index.html#form" class="apply-btn">Оставить заявку</a>
+        </div>
+    </div>
+</body>
+</html>
